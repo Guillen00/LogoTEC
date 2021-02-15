@@ -1,0 +1,14 @@
+
+//Codigo que dibuja una estrella
+haz var 30
+centro
+borraPantalla
+
+//Funcion para dibujar estrella
+para espiral []
+	haz indice 0
+	repite 45 [avanza indice * 5 gd 144 inc [indice]]
+fin 
+
+
+espiral []

@@ -1,0 +1,24 @@
+
+//Codigo para dibujar una flor
+haz var 2
+
+para flor[]
+	
+	haz giro 0
+	haz angulo 0
+	haz.mientras [inic angulo = 0
+		haz.mientras[
+			av 30
+			gd angulo
+			inc [angulo 5]
+		]
+		[menorque? angulo 180]	inc [giro 60]]
+	[menorque? giro 360]
+	centro
+	gd angulo
+fin
+
+borraPantalla
+centro
+poncl "azul"
+flor[]

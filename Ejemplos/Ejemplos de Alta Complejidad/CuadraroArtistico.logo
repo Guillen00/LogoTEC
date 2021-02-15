@@ -1,0 +1,14 @@
+
+//Este codigo dibuja un cuadrado artistico
+
+haz var 30
+centro
+borraPantalla
+
+//Funcion para dibujar el cuadrado artistico
+para cuadrado []
+	haz indice 0
+	repite 250  [avanza indice gd 89 inc [indice]]
+fin 
+
+cuadrado []

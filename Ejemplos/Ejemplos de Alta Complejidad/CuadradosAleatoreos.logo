@@ -1,0 +1,22 @@
+
+//Codigo para generar cuadrados aleatoreos
+haz var 0
+
+centro
+borraPantalla 
+
+//Funcion que hace un cuadrado
+para cuadrado [largo]
+	repite 4 [avanza largo gd 90]
+fin 
+
+cuadrado [100]
+
+// Funcion que pone colores random 
+para randomC[]
+	poncolorlapiz elegir ["azul" "gris" "negro" "rojo" "verde"
+                                       "marron" "amarillo" "cian" "gris"]
+fin
+
+
+repite 36 [randomC[] cuadrado[azar 150] gd 10]

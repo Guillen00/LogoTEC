@@ -1,0 +1,23 @@
+
+//Arbol Circular
+haz var 0
+centro
+borraPantalla 
+
+haz var2 -90
+ponrumbo var2
+para arbol [nivel tamano giro]
+	si (nivel > 0)
+		[
+		avanza tamano
+		gi giro
+		arbol [(nivel -1) tamano  (giro -3)]
+		gd giro
+		gd giro
+		arbol [(nivel -1) tamano  (giro -3)]
+		gi giro
+		retrocede tamano 
+		]
+fin
+
+repite 4[centro arbol [9 20 20] inc[var2 -90] ponrumbo var2]

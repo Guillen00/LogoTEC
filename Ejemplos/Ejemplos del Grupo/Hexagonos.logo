@@ -1,0 +1,24 @@
+
+//Codigo para generar hexagonos aleatoreos
+haz var 0
+
+para hexag [nivel]
+	si(nivel >0)[
+		inic nivel = nivel - 1
+		av 50
+		gi 60
+		si (nivel > azar 10)[
+			hexag[nivel]
+		]
+		gd 120
+		si (nivel > azar 10)[
+			hexag[nivel]
+		]
+		gi 60
+		re 50
+	]
+fin
+
+centro
+borraPantalla
+hexag[ 20]

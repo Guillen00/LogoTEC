@@ -1,0 +1,17 @@
+//
+haz var&-_ 1
+imprimir var&-_
+
+para funcion1[]
+	imprimir "a"
+fin
+
+para funcion1[var1]
+	imprimir var1
+fin
+
+funcion1[]
+
+imprimir elemento 3 [ 1 2 3 4 5 ]
+
+poncolorlapiz "azul"

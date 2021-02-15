@@ -1,0 +1,119 @@
+
+
+//Paisaje Nocturno
+haz var 0
+
+para copoNieve [n l posX posY]
+	sisino (iguales? n 0)
+		[poncolorlapiz "Azul"]
+		[
+			haz tmp 1
+			inic tmp = diferencia n 2
+
+			haz i 0
+			mientras [i<8] 
+				[copoNieve [tmp l/2 posX posY] 
+
+					ponpos [posX posY]
+
+					avanza l
+					avanza menos l/2
+					gd 25
+					avanza l/3
+					avanza menos l/3
+					gi 50
+					avanza l/3
+					avanza menos l/3
+					gd 25
+					avanza menos l/2
+					avanza menos l/2
+					gd 45
+
+					inc [i]
+				]
+		]
+fin
+
+para arbol [size]
+	poncolorlapiz "Verde"
+
+	sisino (size < 20) [avanza size retrocede size]
+	[
+		avanza size/3
+		gi 30 
+		arbol[size*2/3] 
+		gd 30
+		avanza size/6 
+		gd 25 
+		arbol [size/2] 
+		gi 25
+		avanza size/3
+		gd 25 
+		arbol [size/2] 
+		gi 25
+		avanza size/6
+		retrocede size
+	]
+fin
+
+
+para suelo [size]
+	poncolorlapiz "verde"
+	ponrumbo 0
+	avanza size
+fin
+
+para estrella[size posX posY]
+	poncolorlapiz "Amarillo"
+	ponpos [posX posY]
+	repite 5 [
+		avanza size
+		gd 2*360/5
+	]
+fin
+
+para main []
+	borraPantalla
+	haz coordX 1
+	haz coordY 380
+	haz tamano 1
+
+	centro
+	repite 40[
+		inc [coordY 1]	
+		ponpos [100 coordY]
+		suelo [709]	
+	]
+
+	centro
+	repite 10[
+		inic coordX = suma 100 azar 600
+		inic coordY = suma 50 azar 100		
+		inic tamano = suma 10 azar 25
+		estrella [tamano coordX coordY]
+	]
+
+	centro
+	repite 10 [
+		inic coordX = suma 100 azar 600
+		inic coordY = suma 50 azar 100		
+		inic tamano = suma 10 azar 20
+
+		copoNieve [4 tamano coordX coordY]
+	] 
+
+	centro
+	inic coordX = 50
+	repite 6 [
+		inic tamano = suma 100 azar 30
+		inc [coordX 110]
+
+		ponrumbo -90
+		pony 400
+		ponx coordX
+		arbol [tamano]
+	] 
+
+fin
+
+main []
